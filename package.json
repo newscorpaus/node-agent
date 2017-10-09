@@ -5,7 +5,7 @@
   "main": "dist/src/index.js",
   "scripts": {
     "test": "NODE_ENV=test ./node_modules/.bin/_mocha -r ts-node/register 'test/index.test.ts'",
-    "preinstall": "tsc"
+    "preinstall": "./node_modules/.bin/tsc"
   },
   "repository": {
     "type": "git",
