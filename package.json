@@ -5,14 +5,14 @@
   "main": "dist/src/index.js",
   "scripts": {
     "test": "NODE_ENV=test ./node_modules/.bin/_mocha -r ts-node/register 'test/index.test.ts'",
-    "postnstall": "./node_modules/.bin/tsc"
+    "postinstall": "./node_modules/.bin/tsc"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/newscorpaus/node-agent.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "",
   "bugs": {
     "url": "https://github.com/newscorpaus/node-agent/issues"
   },
