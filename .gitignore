@@ -1,0 +1,43 @@
+dist
+
+# OS
+.DS_Store
+.DS_Store?
+
+# Editors
+tcog.iml
+.idea/*
+*.sublime-*
+.project
+
+# Logs
+newrelic.log
+*.log
+
+# Package Managers
+yarn.lock
+node_modules
+
+# Coverage
+lib-cov
+transformers-cov
+ui-cov
+filters-cov
+reports
+
+# Local Fixtures
+test/fixtures/proxy/*.txt
+test/fixtures/proxy/*resources.newscdn.com.au*
+
+# Generated Files
+*.tap
+dump.rdb
+TODO.md
+_dist
+_docs
+logs
+tmp
+temp
+
+# Generated API Documentation
+docs/index.html

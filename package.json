@@ -1,0 +1,37 @@
+{
+  "name": "agent",
+  "version": "1.0.0",
+  "description": "A http(s) agent",
+  "main": "dist/src/index.js",
+  "scripts": {
+    "test": "NODE_ENV=test ./node_modules/.bin/_mocha -r ts-node/register 'test/index.test.ts'",
+    "preinstall": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/newscorpaus/node-agent.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/newscorpaus/node-agent/issues"
+  },
+  "homepage": "https://github.com/newscorpaus/node-agent#readme",
+  "devDependencies": {
+    "@types/chai": "^4.0.4",
+    "@types/debug": "0.0.30",
+    "@types/mocha": "^2.2.43",
+    "@types/node": "^8.0.33",
+    "@types/ramda": "^0.24.16",
+    "@types/request": "^2.0.4",
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1",
+    "ts-node": "^3.3.0"
+  },
+  "dependencies": {
+    "debug": "^3.1.0",
+    "ramda": "^0.24.1",
+    "request": "^2.83.0",
+    "typescript": "^2.5.3"
+  }
+}
