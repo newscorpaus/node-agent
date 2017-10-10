@@ -7,7 +7,7 @@ import { Writable } from 'stream';
 import { omit } from 'ramda';
 import * as _request from 'request';
 
-const _agent = (requester = _request) => {
+const _agent = (requester: _request.RequestAPI<_request.Request, _request.CoreOptions, _request.RequiredUriUrl> = _request) => {
     return function (protocol: string, url: string, headers: any, writable: Writable, cb: ((error?: Error, result?: any) => void)): void {
         const headersCopy = omit(['host'], headers);
 

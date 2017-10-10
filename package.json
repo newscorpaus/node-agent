@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A http(s) agent",
   "main": "dist/src/index.js",
+  "types": "src/index.d.ts",
   "scripts": {
     "test": "NODE_ENV=test ./node_modules/.bin/_mocha -r ts-node/register 'test/index.test.ts'",
     "postinstall": "./node_modules/.bin/tsc"
