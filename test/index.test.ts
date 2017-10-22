@@ -16,9 +16,9 @@ const fakeWritable = () => {
 
 describe('capi v2 agent', () => {
     it('proxies a v2 content call to CAPI', (done) => {
-        const fn: (options: (request.CoreOptions & request.UriOptions), callback?: request.RequestCallback) => any =
-            function(options: (request.CoreOptions & request.UriOptions), cb?: request.RequestCallback) {
-                expect(options.uri).to.equal('http://api.newsapi.com.au/content/v2/capi-id-xyz');
+        const fn: (options: (request.CoreOptions & request.UrlOptions), callback?: request.RequestCallback) => any =
+            function(options: (request.CoreOptions & request.UrlOptions), cb?: request.RequestCallback) {
+                expect(options.url).to.equal('http://api.newsapi.com.au/content/v2/capi-id-xyz');
                 done();
                 return <request.Request>{};
             };
@@ -27,13 +27,13 @@ describe('capi v2 agent', () => {
 
         const agent = _agent(fakeRequester);
 
-        agent('http', '/api.newsapi.com.au/content/v2/capi-id-xyz', { 'Accept-Encoding': 'gzip' }, fakeWritable(), (err: Error, result: any) => {});
+        agent('http://api.newsapi.com.au/content/v2/capi-id-xyz', { 'Accept-Encoding': 'gzip' }, fakeWritable(), (err: Error, result: any) => {});
     });
 
     it('uses the indicated protocol', (done) => {
-        const fn: (options: (request.CoreOptions & request.UriOptions), callback?: request.RequestCallback) => any =
-            function(options: (request.CoreOptions & request.UriOptions), cb?: request.RequestCallback) {
-                expect(options.uri).to.match(/https\:\/\//);
+        const fn: (options: (request.CoreOptions & request.UrlOptions), callback?: request.RequestCallback) => any =
+            function(options: (request.CoreOptions & request.UrlOptions), cb?: request.RequestCallback) {
+                expect(options.url).to.match(/https\:\/\//);
                 done();
                 return <request.Request>{};
             };
@@ -41,15 +41,15 @@ describe('capi v2 agent', () => {
         const fakeRequester = <request.RequestAPI<request.Request, request.CoreOptions, {}>>fn;
 
         const agent = _agent(fakeRequester);
-        agent('https', '/api.newsapi.com.au/content/v2/capi-id-xyz', { 'Accept-Encoding': 'gzip' }, fakeWritable(), (err: Error) => {});
+        agent('https://api.newsapi.com.au/content/v2/capi-id-xyz', { 'Accept-Encoding': 'gzip' }, fakeWritable(), (err: Error) => {});
     });
 
     describe('error conditions', () => {
         it('uses the callback if an error occurs in the request', (done) => {
             // const scope = nockReplyWithError('http://api.newsapi.com.au/content/v2', { message: 'BOOM', name: 'BoomError' });
 
-            const fn: (options: (request.CoreOptions & request.UriOptions), callback?: request.RequestCallback) => any =
-                function(options: (request.CoreOptions & request.UriOptions), cb?: request.RequestCallback) {
+            const fn: (options: (request.CoreOptions & request.UrlOptions), callback?: request.RequestCallback) => any =
+                function(options: (request.CoreOptions & request.UrlOptions), cb?: request.RequestCallback) {
                     return cb({ message: 'BOOM', name: 'BoomError' }, undefined, undefined);
                 };
 
@@ -57,7 +57,7 @@ describe('capi v2 agent', () => {
 
             const agent = _agent(fakeRequester);
 
-            agent('http', '/api.newsapi.com.au/content/v2/capi-id-xyz', { 'Accept-Encoding': 'gzip' }, fakeWritable(), (err: Error, res: any) => {
+            agent('http://api.newsapi.com.au/content/v2/capi-id-xyz', { 'Accept-Encoding': 'gzip' }, fakeWritable(), (err: Error, res: any) => {
                 expect(err.message).to.equal('BOOM');
                 expect(err.name).to.equal('BoomError');
                 done();
