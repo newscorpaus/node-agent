@@ -19,17 +19,17 @@
   },
   "homepage": "https://github.com/newscorpaus/node-agent#readme",
   "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1",
+    "ts-node": "^3.3.0"
+  },
+  "dependencies": {
     "@types/chai": "^4.0.4",
     "@types/debug": "0.0.30",
     "@types/mocha": "^2.2.43",
     "@types/node": "^8.0.33",
     "@types/ramda": "^0.24.16",
     "@types/request": "^2.0.4",
-    "chai": "^4.1.2",
-    "mocha": "^4.0.1",
-    "ts-node": "^3.3.0"
-  },
-  "dependencies": {
     "debug": "^3.1.0",
     "ramda": "^0.24.1",
     "request": "^2.83.0",
