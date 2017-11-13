@@ -25,7 +25,7 @@ import { _agent } from '../agent';
 
 const agent = _agent();
 
-agent(req.protocol, req.url, req.headers, res, (err: Error, result: any) => {});
+agent(req.url, req.headers, res, (err: Error, result: any) => {});
 
 ```
 
