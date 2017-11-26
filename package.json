@@ -1,9 +1,9 @@
 {
   "name": "agent",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A http(s) agent",
   "main": "dist/src/index.js",
-  "types": "src/index.d.ts",
+  "types": "src/types/index.d.ts",
   "scripts": {
     "test": "NODE_ENV=test ./node_modules/.bin/_mocha -r ts-node/register 'test/index.test.ts'",
     "postinstall": "./node_modules/.bin/tsc"
@@ -25,13 +25,10 @@
   },
   "dependencies": {
     "@types/chai": "^4.0.4",
-    "@types/debug": "0.0.30",
     "@types/mocha": "^2.2.43",
     "@types/node": "^8.0.33",
     "@types/ramda": "^0.24.16",
     "@types/request": "^2.0.4",
-    "debug": "^3.1.0",
-    "ramda": "^0.24.1",
     "request": "^2.83.0",
     "typescript": "^2.5.3"
   }
